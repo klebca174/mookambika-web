@@ -1,0 +1,88 @@
+/* Global header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    /* Pushes the content to left and right */
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #a83939;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow */
+}
+
+/* Logo Section */
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Navigation styling */
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav ul li {
+    margin-left: 30px;
+    /* Spacing between menu items */
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    /* Smooth color change on hover */
+}
+
+.nav ul li a:hover {
+    color: #f39c12;
+    /* Golden color on hover */
+}
+
+/* Hover effect on the entire navigation bar */
+.nav ul li a {
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #f39c12;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+    /* Expands the underline on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        /* Stack logo and nav vertically on smaller screens */
+        align-items: flex-start;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        /* Stack nav items vertically */
+        margin-top: 20px;
+    }
+
+    .nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
